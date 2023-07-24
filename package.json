@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:staged": "jest",
     "prepare": "husky install && chmod ug+x .husky/*",
     "husky-add-hooks": "npx husky add .husky/pre-commit \"npm run pre-commit\" && npx husky add .husky/commit-msg \"npx commitlint --edit \"'$1'\"\" ",
     "pre-commit": "lint-staged"
@@ -27,6 +28,7 @@
   "lint-staged": {
     "*.ts": [
       "eslint --ext *.ts --fix",
+      "npm run test:staged",
       "git add"
     ]
   }
