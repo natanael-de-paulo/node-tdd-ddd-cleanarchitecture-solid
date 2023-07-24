@@ -1,0 +1,16 @@
+{
+  "extends": ["@commitlint/config-conventional"],
+  "types": {
+    "feat": "Nova funcionalidade",
+    "fix": "Correção de bug",
+    "docs": "Documentação",
+    "chore": "Tarefas de construção e ferramentas",
+    "style": "Alterações de estilo",
+    "refactor": "Refatoração de código",
+    "test": "Adição ou modificação de testes",
+    "ci": "Integração contínua",
+    "perf": "Melhoria de desempenho",
+    "revert": "Reverter uma alteração anterior",
+    "custom-type": "Descrição personalizada do tipo"
+  }
+}
