@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest",
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests",
     "prepare": "husky install && chmod ug+x .husky/*",
     "husky-add-hooks": "npx husky add .husky/pre-commit \"npm run pre-commit\" && npx husky add .husky/commit-msg \"npx commitlint --edit \"'$1'\"\" ",
     "pre-commit": "lint-staged"
