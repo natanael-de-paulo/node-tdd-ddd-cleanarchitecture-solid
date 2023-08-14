@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --watch",
-    "test:staged": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --silent --noStackTrace --coverage=false --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit.config.ts",
+    "test:intregration": "npm test -- --watch -c jest-intregration.config.ts",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage=true",
     "prepare": "husky install && chmod ug+x .husky/*",
-    "husky-add-hooks": "npx husky add .husky/pre-commit \"npm run pre-commit\" && npx husky add .husky/commit-msg \"npx commitlint --edit \"'$1'\"\" ",
+    "husky-add-hooks": "npx husky add .husky/pre-commit \"npm run pre-commit\" && npx husky add .husky/commit-msg \"npx commitlint --edit \"'$1'\"\" && npx husky add .husky/pre-push \"npm run test:ci\" ",
     "pre-commit": "lint-staged"
   },
   "keywords": [],
