@@ -5,10 +5,12 @@ import { AddAccountModel } from '../../../../domain/usecases/add-account'
 import { MongoHelper } from '../helpers/mongo-helper'
 
 export class AccountMongoRepository implements AddAccountRepository {
-  async add (accountData: AddAccountModel): Promise<AccountModel> {
-    const accountCollection = MongoHelper.getCollection('accounts')
+  async add(accountData: AddAccountModel): Promise<AccountModel> {
+    const accountCollection = await MongoHelper.getCollection('accounts')
     const { insertedId } = await accountCollection.insertOne(accountData)
-    const result: Document = await accountCollection.findOne({ _id: insertedId }) as WithId<Document>
+    const result: Document = (await accountCollection.findOne({
+      _id: insertedId
+    })) as WithId<Document>
     return MongoHelper.map<Document, AccountModel>(result)
   }
 }
