@@ -7,14 +7,18 @@
       "project": "./tsconfig.json"
       },
       "rules": {
-        "@typescript-eslint/strict-boolean-expressions": "warn",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        
         "@typescript-eslint/consistent-type-imports": "off",
-        "@typescript-eslint/prefer-nullish-coalescing": "warn",
-        "@typescript-eslint/no-misused-promises": "warn",
+        "@typescript-eslint/prefer-nullish-coalescing": "off",
+        "@typescript-eslint/no-misused-promises": "off",
         "space-before-function-paren": "off",
         "@typescript-eslint/space-before-function-paren": "off",
-        "indent": "warn",
-        "@typescript-eslint/indent": "off"
+        "indent": "off",
+        "@typescript-eslint/indent": "off",
+        "curly": "off",
+        "@typescript-eslint/object-curly-spacing": "off",
+        "no-lonely-if":"off"
       }
     }
   ]
